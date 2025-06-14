@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing Values: Nigeria & Jeremy</title>
+    <style>
+        body {
+            background-color: yellowgreen;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: white; /* Ensures text is readable */
+        }
+
+        .container {
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: rgba(0, 0, 0, 0.7); /* Black with transparency */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Accessing Values Dynamically</h2>
+
+    <div class="container">
+        <h3>Nigeria</h3>
+        <p id="nigeriaData"></p>
+    </div>
+
+    <div class="container">
+        <h3>Jeremy</h3>
+        <p id="jeremyData"></p>
+    </div>
+
+    <div class="container">
+        <h3>Subjects</h3>
+        <p id="subjectsData"></p>
+    </div>
+
+    <div class="container">
+        <h3>Updated Subjects After Pop()</h3>
+        <p id="afterPop"></p>
+    </div>
+
+    <script>
+        // ✅ Creating objects for Nigeria and Jeremy
+        let nigeria = {
+            subject: "Science",
+            food: "Jollof Rice",
+            superhero: "E.X.O. – The Legend of Wale Williams",
+            age: 64
+        };
+
+        let jeremy = {
+            subject: "Mathematics",
+            food: "Pizza",
+            superhero: "Spider-Man",
+            age: 13
+        };
+
+        // ✅ Creating an array of subjects
+        let subjects = ["Mathematics", "Physics", "Chemistry", "Biology"];
+
+        // ✅ Display Nigeria's data using object keys
+        document.getElementById("nigeriaData").innerHTML = 
+            `Favorite Subject: ${nigeria.subject} <br> Favorite Food: ${nigeria.food} <br> Superhero: ${nigeria.superhero} <br> Age: ${nigeria.age}`;
+
+        // ✅ Display Jeremy's data using object keys
+        document.getElementById("jeremyData").innerHTML = 
+            `Favorite Subject: ${jeremy.subject} <br> Favorite Food: ${jeremy.food} <br> Superhero: ${jeremy.superhero} <br> Age: ${jeremy.age}`;
+
+        // ✅ Display all subjects using `.join()`
+        document.getElementById("subjectsData").innerHTML = 
+            `Subjects: ${subjects.join(" | ")}`;
+
+        // ✅ Using `.pop()` to remove the last element and display updated array
+        let removedSubject = subjects.pop();
+        document.getElementById("afterPop").innerHTML = 
+            `Removed Subject: ${removedSubject} <br> Updated Subjects: ${subjects.join(" | ")}`;
+    </script>
+
+</body>
+</html>
+
